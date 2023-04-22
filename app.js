@@ -140,6 +140,7 @@ app.get("/detail/:id", (req, res) => {
   const valuearr = []
   db.collection("marks").find({ _id: ObjectId(id) }).toArray(function (err, result) {
       if (err) throw err;
+      if (result[0]==null) return res.status(500).json({ error: 'Some error occurred' });
       for (const [key, value] of Object.entries(result[0])) {
         keyarr.push(key);
         valuearr.push(value);
@@ -158,7 +159,10 @@ let port = process.env.PORT;
 if (port == null || port == "") {
     port = 80;
 }
-
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Some error occurred' });
+});
 app.listen(port, function () {
     console.log("Server has started successfully");
 });
