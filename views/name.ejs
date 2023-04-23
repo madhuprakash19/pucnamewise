@@ -22,22 +22,25 @@
 
     <h3>Please Enter any Name to search for results</h3>
     <br><br>
-    <form action="/search" method="post">
-        <input type="text" name="name" placeholder="mahesh">
-        <button type="submit">Search</button><br>
-    </form>
+    <div id="result">
+      <form action="/search" method="post">
+          <input type="text" name="name" placeholder="mahesh">
+          <button type="submit">Search</button><br>
+      </form>
+    </div>
+
     <br><br><br>
     <div class="text text-muted">
       <p>
         <b>Only Science & Commerce STREAM</b> <br>
         <b>How search Works?</b>
         <br><br>
-        Enter a part of the name, For example if the name is Mohith Raj, Searching as "Raj" also gives Mohith Raj, or searching as "hith" aslo gives the same.
+        Enter a part of the name, For example if the name is Madhu Prakash, Searching as "Prakash" also gives Madhu Prakash, or searching as "akash" aslo gives the same.
         <br><br>
-        Searching is case insensitive which means Captial letters and small letters in th name does not matter.
+        Searching is case in-sensitive which means Captial letters and small letters in th name does not matter.
         <br><br>
-        Spaces are included in search, if the name is "Mohith Raj" and you search from "MohithRaj" no results will be displayed.<br>
-        Mohith Raj and MohithRaj are <b>Not same</b>.
+        Spaces are included in search, which means<br>
+        "Madhu Prakash" and "MadhuPrakash" are <b>Not same</b>.
         <br><br><br><br>
 
       </p>
